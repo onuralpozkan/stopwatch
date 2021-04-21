@@ -1,2 +1,2 @@
-# stopwatch
+# React Stopwatch
 Stylized StopWatch
