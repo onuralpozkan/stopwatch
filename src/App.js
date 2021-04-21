@@ -46,8 +46,14 @@ function App() {
 
       <h1>{second} : {count}</h1>
       
-      <button onClick={startWatch}>{isStarted ? 'Stop' : 'Start'}</button>
-      <button onClick={()=>setCount(0)}>Reset</button>
+     <div className="btns">
+     <button onClick={startWatch}>{isStarted ? 'Stop' : 'Start'}</button>
+      <button onClick={()=>{
+        setCount(0)
+        setSecond(0)
+      }}>Reset</button>
+     </div>
+
     </div>
   );
 }

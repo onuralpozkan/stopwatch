@@ -5,11 +5,19 @@ button{
   width: 120px;
   margin-right: .5rem;
   font-size: 1.25rem;
-  background-color: rosybrown;
+  background-color: rgb(40, 98, 117);
   outline: none;
   
 }
 button:hover{
-  background-color: royalblue;
-  transition: .5s ease-in all;
+  background-color: rgb(102, 131, 218);
+  transition: .3s ease-in all;
+}
+.btns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  text-align: center;
 }
