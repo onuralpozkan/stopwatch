@@ -21,3 +21,30 @@ button:hover{
 h1 {
   text-align: center;
 }
+.watch{
+  background: steelblue;
+  flex: 1;
+  
+}
+.right-panel{
+  min-width: 20%;
+  background: coral;
+}
+.main{
+  min-height: 100vh;
+  background: teal;
+  display: flex;
+  flex-flow: row;
+}
+.time-list{
+  margin: 0;
+  padding:0;
+  list-style: none;
+}
+.time-item{
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  padding: 20px 0px;
+}
