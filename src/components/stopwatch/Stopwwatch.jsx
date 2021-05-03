@@ -1,16 +1,16 @@
-import './App.css';
 import { useEffect, useState } from 'react';
+import './Stopwatch.css';
 
-function App() {
+function Stopwatch() {
   const [count, setCount] = useState(0);
   const [second, setSecond] = useState(0);
   const [isStarted, setIsStarted] = useState(false);
   const [timeArray, setTimeArray] = useState([]);
   const startWatch = () => {
     setIsStarted(!isStarted);
-    if(isStarted){
-      let time = second + " : " + (count < 10 ? '0' + count : count);
-      timeArray.push(time)
+    if (isStarted) {
+      let time = second + ' : ' + (count < 10 ? '0' + count : count);
+      timeArray.push(time);
     }
   };
   useEffect(() => {
@@ -29,46 +29,38 @@ function App() {
       clearInterval(interval);
     };
   }, [isStarted, count]);
-  const intervals = timeArray.map((i,index) => (<li className="time-item" key={`i - ${index}`}>{index + 1}. <em>{i}</em></li>))
+  const intervals = timeArray.map((i, index) => (
+    <li className="wa-time-item" key={`i - ${index}`}>
+      {index + 1}. <em>{i}</em>
+    </li>
+  ));
   return (
-    <div className="main">
-      <div className="watch">
+    <div className="wa-stopwatch">
+      <div className="wa-watch">
         <h1>StopWatch</h1>
-
         <h1>
           {second === 0 ? null : second + ' : '}
           {count < 10 ? '0' + count : count}
         </h1>
 
-        <div className="btns">
+        <div className="wa-btns">
           <button onClick={startWatch}>{isStarted ? 'Stop' : 'Start'}</button>
           <button
             onClick={() => {
               setCount(0);
               setSecond(0);
-              setTimeArray([])
+              setTimeArray([]);
             }}
           >
             Reset
           </button>
         </div>
       </div>
-      <div className="right-panel">
-        <ul className="time-list">
-          {intervals}
-          {/* <li className="time-item">
-            "02 : 22"
-          </li>
-          <li className="time-item">
-            "02 : 22"
-          </li>
-          <li className="time-item">
-            "02 : 22"
-          </li> */}
-        </ul>
+      <div className="wa-right-panel">
+        <ul className="wa-time-list">{intervals}</ul>
       </div>
     </div>
   );
 }
 
-export default App;
+export default Stopwatch;

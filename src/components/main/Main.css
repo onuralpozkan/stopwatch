@@ -1,0 +1,144 @@
+/* .wa-date{
+  background: darkgoldenrod;
+  flex: 1;
+  font-size: calc(18px + 5vmin);
+  text-align: center;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px black;
+}
+
+.wa-clock{margin-bottom: 0;font-weight: bolder;}
+.wa-day{margin:10px;}
+.wa-weekday{margin-top: 0;} */
+
+.wa-home-wrapper {
+  width: 100%;
+
+  display: grid;
+  grid-template-areas: 'left right';
+}
+.wa-date-wrapper {
+  grid-area: left;
+  border-right: 1px solid black;
+}
+.wa-menu-wrapper {
+  grid: right;
+  border-left: 1px solid black;
+}
+.wa-menu-wrapper,
+.wa-date-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .wa-date {
+  background: burlywood;
+}
+.wa-menu {
+  background: brown;
+} */
+.wa-date,
+.wa-menu {
+  font-size: calc(16px + 5vmin);
+  text-align: center;
+}
+.wa-clock {
+  margin-bottom: 0;
+  font-weight: bolder;
+}
+.wa-day {
+  margin: 10px;
+}
+.wa-weekday {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .wa-menu-wrapper {
+    display: none;
+  }
+  .wa-menu-mobile-wrapper {
+    position: absolute;
+    display: block;
+    border-left: none;
+  }
+  .wa-date-wrapper {
+    border-right: none;
+  }
+  .wa-home-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+#wa-alarm-icon,
+#wa-stopwatch-icon,
+#wa-countdown-icon {
+  width: 100px;
+  height: auto;
+}
+.wa-menu {
+  position: relative;
+  background: #0e232e;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+#wa-alarm-icon {
+  position: absolute;
+  top: 20px;
+  left: -40px;
+}
+#wa-stopwatch-icon {
+  position: absolute;
+  top: 60px;
+  right: -40px;
+}
+#wa-countdown-icon {
+  position: absolute;
+  left: 80px;
+  bottom: -40px;
+}
+#wa-alarm-icon:hover,
+#wa-stopwatch-icon:hover,
+#wa-countdown-icon:hover {
+  transform: scale(1.5);
+  transition: all 0.3s ease-in-out;
+}
+.wa-menu-btn {
+  background: #dc143c;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 50px;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wa-menu-btn > button {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+}
+.wa-menu-btn > button:hover {
+  background: #a3122f;
+  transition: all 0.4s ease-in;
+}
+@media screen and (min-width: 768px) {
+  .wa-menu-btn {
+    display: none;
+  }
+}
+
+.cls-1{
+  background: red;
+}

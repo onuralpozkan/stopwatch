@@ -1,0 +1,55 @@
+/*
+ <div className="wa-countdown-wrapper">
+      <div className="wa-user-input">
+        <input
+          type="number"
+          name="user-count"
+          id="user-count"
+          onChange={handleChange}
+          ref={countInput}
+        />
+      </div>
+      <div className="wa-countdown-btns">
+        <button onClick={startCountdown} disabled={isStarted && true}>
+          Start
+        </button>
+        <button onClick={handleStop}>Stop</button>
+        <button onClick={resetCountdown}>Reset</button>
+      </div>
+      <div className="wa-count">{userInput}</div>
+    </div>*/
+.wa-countdown-wrapper {
+  min-height: 50vh;
+  font-size: calc(15px + 4vmin);
+}
+.wa-user-input{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.wa-user-input > label{
+  padding:20px 10px;
+}
+.wa-user-input > input {
+  font-size: calc(15px + 4vmin);
+  border-radius: 10px;
+  width: 100%;
+  border: none;
+  padding: 10px 0px;
+  text-align: center;
+  border: 2px solid rgba(0, 0, 0, 0);
+  outline: none;
+}
+.wa-user-input > input:focus {
+  border: 2px ridge hsl(0, 61%, 50%);
+}
+.wa-countdown-btns{
+  display: flex;
+  justify-content: center;
+  margin:10px auto;
+}
+.wa-count{
+  text-align: center;
+}
+.wa-count > p{
+}

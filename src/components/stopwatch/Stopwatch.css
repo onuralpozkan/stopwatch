@@ -7,13 +7,14 @@ button{
   font-size: 1.25rem;
   background-color: rgb(40, 98, 117);
   outline: none;
+
   
 }
 button:hover{
   background-color: rgb(102, 131, 218);
   transition: .3s ease-in all;
 }
-.btns {
+.wa-btns {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -21,28 +22,27 @@ button:hover{
 h1 {
   text-align: center;
 }
-.watch{
+.wa-stopwatch{
+  width: 100%;
+  display: flex;
+  height: 100vh;
+}
+.wa-watch{
   background: steelblue;
   flex: 1;
-  
 }
-.right-panel{
+.wa-right-panel{
   min-width: 20%;
   background: coral;
 }
-.main{
-  min-height: 100vh;
-  background: teal;
-  display: flex;
-  flex-flow: row;
-}
-.time-list{
+
+.wa-time-list{
   margin: 0;
   padding:0;
   list-style: none;
 }
-.time-item{
-  font-size: 1.5rem;
+.wa-time-item{
+  font-size: calc(2px + 5vmin);
   text-align: center;
   font-weight: bold;
   border-bottom: 1px solid black;
