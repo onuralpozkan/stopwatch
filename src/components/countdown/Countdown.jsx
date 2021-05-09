@@ -1,5 +1,7 @@
 import useCountdown from './useCountdown';
+import {useRef} from 'react'
 import './Countdown.css';
+import SoundFile from '../../assets/sounds/digital-beep.wav'
 const Countdown = () => {
   const {
     handleChange,
@@ -9,8 +11,17 @@ const Countdown = () => {
     countInput,
     isStarted,
     userInput,
-  } = useCountdown(50);
-
+  } = useCountdown(5);
+  
+  const mySound = useRef()
+  const sound = <audio ref={mySound} src={SoundFile} autoPlay/>
+  console.log(mySound.current);
+  const handleSound = () => {
+    mySound.current.pause()
+  }
+  const handlePlay = () => {
+    mySound.current.play()
+  }
   return (
     <div className="wa-countdown-wrapper">
       <div className="wa-user-input">
@@ -33,6 +44,11 @@ const Countdown = () => {
       </div>
       <div className="wa-count">
         <p>{userInput}</p>
+      </div>
+      <div className="wa-sound">
+        {userInput === 0 && sound}
+        <button onClick={handleSound}>||</button>
+        <button onClick={handlePlay}>Play</button>
       </div>
     </div>
   );

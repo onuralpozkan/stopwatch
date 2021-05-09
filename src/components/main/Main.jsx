@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
-import DatePart from './Date';
 import Menu from './Menu';
 import './Main.css';
+import DatePart from './dateAndClock/DatePart';
 
 const Main = () => {
   const [mobileMenuClass, setMobileMenuClass] = useState("")

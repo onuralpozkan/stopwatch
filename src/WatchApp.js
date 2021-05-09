@@ -1,5 +1,4 @@
 import './WatchApp.css';
-import DatePart from './components/main/Date';
 import Main from './components/main/Main';
 import { Route, Switch } from 'react-router-dom';
 import Stopwatch from './components/stopwatch/Stopwwatch';
