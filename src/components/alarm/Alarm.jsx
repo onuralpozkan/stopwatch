@@ -3,11 +3,13 @@ import SoundFile from '../../assets/sounds/digital-beep.wav';
 import useClock from '../utils/useClock';
 import './Alarm.css';
 import useAlarmSetter from './useAlarmSetter';
+import useSetter from './useSetter';
 const Alarm = () => {
   const { clock } = useClock();
   const mySound = useRef();
+  const hourInput = useRef();
   //const sound = <audio ref={mySound} src={SoundFile}/>
-  const { selectHour, selectMinute, stopAlarm, isAlarmBell } = useAlarmSetter(
+  const {  stopAlarm, isAlarmBell,selector } = useAlarmSetter(
     mySound,
     clock
   );
@@ -16,6 +18,7 @@ const Alarm = () => {
       <button onClick={stopAlarm}>Stop Alarm</button>
     </div>
   ) : null;
+  
   return (
     <div className="wa-alarm-wrapper">
       <div className="wa-alarm-title">
@@ -27,14 +30,17 @@ const Alarm = () => {
         <h3>{clock.time}</h3>
       </div>
       <div className="wa-alarm-box">
-        <div className="wa-alarm-set">
+        {/* <div className="wa-alarm-set">
           <span>Set Alarm:</span>
           <br />
           {selectHour}
           <span> : </span>
           {selectMinute}
-        </div>
+        </div> */}
         {alarmBtn}
+      </div>
+      <div className="wa-alarm-box">
+        {selector(0,23,"hours")} <span className="dots">:</span> {selector(0,59,"minutes")}
       </div>
       <audio ref={mySound} src={SoundFile} />
     </div>

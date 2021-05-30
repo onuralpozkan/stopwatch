@@ -8,7 +8,7 @@ import Alarm from './components/alarm/Alarm';
 function WatchApp() {
 
   return (
-    <div className="wa-main">
+    <div className="wa-top-level-container">
       <Switch>
         <Route exact path="/" component={Main} />
         <Route path="/stopwatch" component={Stopwatch} />

@@ -6,9 +6,9 @@ const DatePart = () => {
   return (
     <div className="wa-date-wrapper">
       <div className="wa-date">
-        <p className="wa-clock">{clock.time}</p>
-        <p className="wa-day">{date}</p>
-        <p className="wa-weekday">{day}</p>
+        <p className="wa-clock">Time</p>
+        <p className="wa-day">&amp;</p>
+        <p className="wa-weekday">Calendar</p>
       </div>
     </div>
   );

@@ -14,15 +14,62 @@
   border: none;
 }
 .wa-alarm-box{
-  margin: 0 auto;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
+  align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 20px;
+  background: rgb(43, 182, 201);
 }
 .wa-alarm-stop > button{
   width: 50%;
   margin-top: 50px;
 }
 
+.wa-alarm-setter{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.wa-alarm-setter input{
+  width: 80px;
+  height: 80px;
+  background: none;
+  border: none;
+  font-size: 4rem;
+  text-align: center;
+  outline: none;
+}
+.wa-alarm-box span{
+  font-size: 5rem;
+}
+.wa-set-hour{
+  display: flex;
+  flex-flow: column nowrap;
+}
+.wa-set-hour i{
+  border: 1px solid red;
+  background: aquamarine;
+}
+.chevron-up{
+  transform: rotate(180deg);
+}
+.chevron-down,.chevron-up{
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wa-chevron-svg{
+  width: 100%;
+  height: 100%;
+}
+.wa-chevron-svg:active{
+  width: 95%;
+  height: 95%;
+}
+.wa-arrow-box{
+  width: 100px;
+  height: 100px;
+}
