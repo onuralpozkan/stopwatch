@@ -1,0 +1,10 @@
+.wa-top-level-container{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    120deg,
+    #8ed6ff 20%,
+    rgba(218, 248, 255, 0.75) 40%,
+    #ffffff 100%
+  );
+}

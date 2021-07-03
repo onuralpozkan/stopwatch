@@ -2,47 +2,35 @@ import { useState, useEffect, useRef } from 'react';
 import SoundFile from '../../assets/sounds/digital-beep.wav';
 import useClock from '../utils/useClock';
 import './Alarm.css';
-import useAlarmSetter from './useAlarmSetter';
-import useSetter from './useSetter';
+import uniqid from 'uniqid';
+import SingleAlarm from './SingleAlarm';
 const Alarm = () => {
-  const { clock } = useClock();
-  const mySound = useRef();
-  const hourInput = useRef();
-  //const sound = <audio ref={mySound} src={SoundFile}/>
-  const {  stopAlarm, isAlarmBell,selector } = useAlarmSetter(
-    mySound,
-    clock
-  );
-  const alarmBtn = isAlarmBell ? (
-    <div className="wa-alarm-stop">
-      <button onClick={stopAlarm}>Stop Alarm</button>
-    </div>
-  ) : null;
-  
+  const [alarms, setAlarms] = useState([]);
+
+  const addAlarm = () => {
+    let uuid = uniqid('alarm-');
+    setAlarms((p) => [
+      ...p,
+      {
+        component: <SingleAlarm id={uuid} removeAlarm={removeAlarm} />,
+        id: uuid,
+      },
+    ]);
+  };
+
+  const removeAlarm = (e, id) => {
+    setAlarms((p) => p.filter((i) => i.id != id));
+  };
+  const alarmBox = alarms.length > 0 ? alarms.map((i) => i.component) : 'Add alarm to set alarm :)' 
   return (
     <div className="wa-alarm-wrapper">
-      <div className="wa-alarm-title">
-        <h1>
-          <h1>Alarm Clock</h1>
-        </h1>
+      <h1 className="wa-alarm-title">Alarm</h1>
+      <div className="wa-alarms-container">
+        {alarmBox}
       </div>
-      <div className="wa-alarm-current-time">
-        <h3>{clock.time}</h3>
-      </div>
-      <div className="wa-alarm-box">
-        {/* <div className="wa-alarm-set">
-          <span>Set Alarm:</span>
-          <br />
-          {selectHour}
-          <span> : </span>
-          {selectMinute}
-        </div> */}
-        {alarmBtn}
-      </div>
-      <div className="wa-alarm-box">
-        {selector(0,23,"hours")} <span className="dots">:</span> {selector(0,59,"minutes")}
-      </div>
-      <audio ref={mySound} src={SoundFile} />
+      <button onClick={addAlarm} className="wa-btn wa-btn-circular">
+        <i className="la la-plus"></i>
+      </button>
     </div>
   );
 };

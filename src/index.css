@@ -2,7 +2,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 16px;
-  background-color: rgb(202, 202, 202);
 }
 *,
 ::after,
@@ -14,4 +13,88 @@
 body {
   margin: 0;
   padding: 0;
+}
+
+/*********************Button Styles******************/
+
+.wa-btn {
+ position: relative;
+  display: block;
+  margin: 30px auto;
+  padding: 0;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  background-color: #2ecc71;
+  color: #ecf0f1;
+  transition: background-color .3s;
+}
+.wa-btn-circular{
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1C4F7D;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.wa-btn-circular:hover, .wa-btn-circular:focus {
+  background-color: #2975b6;
+}
+.wa-btn-inline{
+  display: inline;
+}
+.wa-btn-delete{
+  margin: 0;
+  padding: .25rem .75rem;
+  background-color: #b62e29;
+  width: max-content;
+
+}
+.wa-btn-delete:hover, .wa-btn-delete:focus {
+  background-color: #d32a25;
+}
+.wa-btn-stop{
+  margin: 10px;
+  padding: .25rem .75rem;
+  background-color: #d3aa26;
+  width: 80%;
+}
+.wa-btn-stop:hover, .wa-btn-stop:focus {
+  background-color: #ecbd22;
+}
+.wa-btn > * {
+  position: relative;
+}
+.wa-btn span {
+  display: block;
+  padding: 12px 24px;
+}
+.wa-btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236, 240, 241, .3);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.wa-btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+  transition: width .2s ease-out, padding-top .2s ease-out;
 }
