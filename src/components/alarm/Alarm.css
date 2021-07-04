@@ -8,7 +8,6 @@
   margin: 0;
   padding: 1rem;
   color: #0E263D;
-  font-family: 'Roboto','sans-serif';
   font-size: 4rem;
 }
 
@@ -67,4 +66,56 @@
 .wa-twodots {
   font-size: 2rem;
   font-weight: 900;
+}
+/* Alarm Page Top */
+
+.wa-alarm-top{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  padding-bottom: 0;
+  font-size: 2rem;
+  position: relative;
+}
+.wa-config-box{
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  background:rgba(255,255,255,.8);
+  color: rgba(14, 38, 61, 0.9);
+  border-radius: 5px;
+  font-size: 1.25rem;
+  font-family: 'Roboto','sans-serif';
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+}
+#wa-config-link{
+  text-decoration: none;
+}
+.wa-config-open{
+  display: block;
+}
+.wa-config-close{
+  display: none;
+}
+.wa-top-links:hover{
+  color: #2975b6;
+}
+.wa-top-links:active,
+.wa-top-links:focus,
+.wa-top-links:visited{
+  color: #0E263D;
+}
+.wa-config-box ul{
+  list-style: none;
+  margin: 0;
+  padding: .5rem;
+}
+.wa-config-box ul li:first-child{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .1rem;
+}
+.wa-config-box ul li {
+  padding: .5rem 0;
 }
