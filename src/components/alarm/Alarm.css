@@ -3,14 +3,6 @@
   min-height: 100vh;
   position: relative;
 }
-
-.wa-alarm-title {
-  margin: 0;
-  padding: 1rem;
-  color: #0E263D;
-  font-size: 4rem;
-}
-
 .wa-set-alarm select {
   font-size: 1.5rem;
   border-radius: 5px;

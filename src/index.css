@@ -20,7 +20,12 @@ h4,h5,h6{
   font-family: 'Saira Stencil One', cursive;
   font-weight: normal;
 }
-
+.wa-pages-title {
+  margin: 0;
+  padding: 1rem;
+  color: #0E263D;
+  font-size: 4rem;
+}
 /*********************Button Styles******************/
 
 .wa-btn {
@@ -50,6 +55,13 @@ h4,h5,h6{
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
+}
+.wa-btn-play{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  margin: 0 10px;
+  transform: translateX(0);
 }
 .wa-btn-circular:hover, .wa-btn-circular:focus {
   background-color: #2975b6;

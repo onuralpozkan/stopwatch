@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
-import SoundFile from '../../assets/sounds/digital-beep.wav';
-import useClock from '../utils/useClock';
+import { useState } from 'react';
 import './Alarm.css';
 import uniqid from 'uniqid';
 import SingleAlarm from './SingleAlarm';
@@ -22,11 +20,14 @@ const Alarm = () => {
   const removeAlarm = (e, id) => {
     setAlarms((p) => p.filter((i) => i.id != id));
   };
-  const alarmBox = alarms.length > 0 ? alarms.map((i) => <div key={i.id}>{i.component}</div>) : 'Add alarm to set alarm :)' 
+  const alarmBox =
+    alarms.length > 0
+      ? alarms.map((i) => <div key={i.id}>{i.component}</div>)
+      : 'Add alarm to set alarm :)';
   const [isConfigOpen, setIsConfigOpen] = useState(false);
   const openConfig = () => {
     setIsConfigOpen(!isConfigOpen);
-  }
+  };
   return (
     <div className="wa-alarm-wrapper">
       <div className="wa-alarm-top">
@@ -40,20 +41,22 @@ const Alarm = () => {
             <i className="las la-cog"></i>
           </Link>
         </div>
-        <div className={`wa-config-box wa-config-${isConfigOpen ? 'open' : 'close'}`}>
+        <div
+          className={`wa-config-box wa-config-${
+            isConfigOpen ? 'open' : 'close'
+          }`}
+        >
           <ul>
-            <li>
-              Settings
-            </li>
+            <li>Settings</li>
             <li>Set Alarm Music</li>
-            <li><input type="file" name="" id="" /></li>
+            <li>
+              <input type="file" name="" id="" />
+            </li>
           </ul>
         </div>
       </div>
-      <h1 className="wa-alarm-title">Alarm</h1>
-      <div className="wa-alarms-container">
-        {alarmBox}
-      </div>
+      <h1 className="wa-pages-title">Alarm</h1>
+      <div className="wa-alarms-container">{alarmBox}</div>
       <button onClick={addAlarm} className="wa-btn wa-btn-circular">
         <i className="la la-plus"></i>
       </button>

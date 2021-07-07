@@ -55,9 +55,8 @@ const Main = () => {
         </div>
       </div>
       <div className="wa-btn-wrapper">
-        <button onClick={handleMenu}>
-          <span className="line line-1"></span>
-          <span className="line line-2"></span>
+        <button onClick={handleMenu} className="wa-btn wa-btn-circular wa-btn-play">
+         <i className="las la-plus"></i>
         </button>
       </div>
       <nav className="wa-nav">

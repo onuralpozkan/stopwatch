@@ -1,23 +1,8 @@
-button{
-  padding: .75rem 1rem;
-  border-radius: 5px;
-  border: none;
-  width: 120px;
-  margin-right: .5rem;
-  font-size: 1.25rem;
-  background-color: rgb(40, 98, 117);
-  outline: none;
-
-  
-}
-/* button:hover{
-  background-color: rgb(102, 131, 218);
-  transition: .3s ease-in all;
-} */
 .wa-btns {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 h1 {
   text-align: center;
@@ -27,13 +12,50 @@ h1 {
   display: flex;
   height: 100vh;
 }
+.wa-stopwatch-top{
+  width: 100%;
+  padding: 1rem;
+  padding-bottom: 0;
+  font-size: 2rem;
+}
 .wa-watch{
-  background: steelblue;
+  display: flex;
+  flex-flow: column;
+  position: relative;
   flex: 1;
+}
+.wa-stopwatch-time{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.wa-stopwatch-time h1{
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  background: inherit;
+  padding: 1rem;
+  width:240px;
+  border-radius: 5px;
+  height: min-content;
+  position: relative;
+  color: #D00000;
+  letter-spacing: .2rem;
+}
+.wa-stopwatch-time h1::before{
+  content: '';
+  position: absolute;
+  background: inherit;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+  filter: blur(10px);
 }
 .wa-right-panel{
   min-width: 20%;
-  background: coral;
+  background: #0E263D;
+  font-family:'Saira Stencil One', cursive;
+  font-weight:normal;
 }
 
 .wa-time-list{
@@ -42,9 +64,10 @@ h1 {
   list-style: none;
 }
 .wa-time-item{
-  font-size: calc(2px + 5vmin);
+  font-size: calc(2px + 3.5vmin);
   text-align: center;
   font-weight: bold;
-  border-bottom: 1px solid black;
+  color: #fff;
+  border-bottom: 1px solid #bababa;
   padding: 20px 0px;
 }

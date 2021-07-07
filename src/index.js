@@ -4,13 +4,10 @@ import './index.css';
 import WatchApp from './WatchApp';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { AlarmContextProvider } from './components/context/alarmContext';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <AlarmContextProvider>
         <WatchApp />
-      </AlarmContextProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

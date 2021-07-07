@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Stopwatch.css';
-
+import { Link } from 'react-router-dom';
 function Stopwatch() {
   const [count, setCount] = useState(0);
   const [second, setSecond] = useState(0);
@@ -31,33 +31,54 @@ function Stopwatch() {
   }, [isStarted, count]);
   const intervals = timeArray.map((i, index) => (
     <li className="wa-time-item" key={`i - ${index}`}>
-      {index + 1}. <em>{i}</em>
+      <span style={{color:'#bababa',marginRight:".2rem"}}>{index + 1}.</span> {i}
     </li>
   ));
   return (
     <div className="wa-stopwatch">
       <div className="wa-watch">
-        <h1>StopWatch</h1>
-        <h1>
-          {second === 0 ? null : second + ' : '}
-          {count < 10 ? '0' + count : count}
-        </h1>
+        <div className="wa-stopwatch-top">
+          <div className="wa-home">
+            <Link to="/" className="wa-top-links">
+              <i className="las la-home"></i>
+            </Link>
+          </div>
+        </div>
+        <h1 className="wa-pages-title">StopWatch</h1>
+        <div className="wa-stopwatch-time">
+          <h1>
+            <span>{second === 0 ? null : second + ':'}</span>
+            <span> {count < 10 ? '0' + count : count}</span>
+          </h1>
+        </div>
 
         <div className="wa-btns">
-          <button onClick={startWatch}>{isStarted ? 'Stop' : 'Start'}</button>
           <button
+            className="wa-btn wa-btn-circular wa-btn-play"
+            onClick={startWatch}
+          >
+            {isStarted ? (
+              <i className="las la-pause-circle"></i>
+            ) : (
+              <i className="las la-play-circle"></i>
+            )}
+          </button>
+          <button
+            className="wa-btn wa-btn-circular wa-btn-play"
             onClick={() => {
               setCount(0);
               setSecond(0);
               setTimeArray([]);
             }}
           >
-            Reset
+            <i className="las la-undo-alt"></i>
           </button>
         </div>
       </div>
       <div className="wa-right-panel">
-        <ul className="wa-time-list">{intervals}</ul>
+        <ul className="wa-time-list">
+          <li className="wa-time-item">Turlar</li>
+          {intervals}</ul>
       </div>
     </div>
   );

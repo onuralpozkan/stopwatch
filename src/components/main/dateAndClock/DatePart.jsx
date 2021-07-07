@@ -1,8 +1,4 @@
-import useClock from '../../utils/useClock';
-import useDate from '../../utils/useDate';
 const DatePart = () => {
-  const { clock } = useClock();
-  const { date, day } = useDate();
   return (
     <div className="wa-date-wrapper">
       <div className="wa-date">
