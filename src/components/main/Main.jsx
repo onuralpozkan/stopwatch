@@ -26,9 +26,9 @@ const Main = () => {
     <div className="wa-main">
       <div className="wa-title">
         <h1>
-          Time App <br className="wa-br" />
+          React Timer <br className="wa-br" />
           &amp;
-          <br className="wa-br" /> Cal
+          <br className="wa-br" /> Alarm
         </h1>
       </div>
 
